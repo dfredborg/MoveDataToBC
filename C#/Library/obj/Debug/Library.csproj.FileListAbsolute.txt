@@ -1,0 +1,10 @@
+C:\Users\def\source\repos\OdataBc\Library\bin\Debug\Library.dll
+C:\Users\def\source\repos\OdataBc\Library\bin\Debug\Library.pdb
+C:\Users\def\source\repos\OdataBc\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\def\source\repos\OdataBc\Library\obj\Debug\Library.dll
+C:\Users\def\source\repos\OdataBc\Library\obj\Debug\Library.pdb
+C:\Users\def\source\repos\OdataBc\Library\bin\Debug\Newtonsoft.Json.dll
+C:\Users\def\source\repos\OdataBc\Library\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\def\source\repos\OdataBc\Library\bin\Debug\Newtonsoft.Json.xml
+C:\Users\def\source\repos\OdataBc\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\def\source\repos\OdataBc\Library\obj\Debug\Library.csproj.CopyComplete

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/DataToBc" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/DataToBc" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/DataToBc" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="GetFields">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="type" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="direct" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetFields_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetFunctions">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetFunctions_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Create">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="type" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="jsonString" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="directCreate" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Create_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="GetFields">
+    <part name="parameters" element="tns:GetFields" />
+  </message>
+  <message name="GetFields_Result">
+    <part name="parameters" element="tns:GetFields_Result" />
+  </message>
+  <message name="GetFunctions">
+    <part name="parameters" element="tns:GetFunctions" />
+  </message>
+  <message name="GetFunctions_Result">
+    <part name="parameters" element="tns:GetFunctions_Result" />
+  </message>
+  <message name="Create">
+    <part name="parameters" element="tns:Create" />
+  </message>
+  <message name="Create_Result">
+    <part name="parameters" element="tns:Create_Result" />
+  </message>
+  <portType name="DataToBc_Port">
+    <operation name="GetFields">
+      <input name="GetFields" message="tns:GetFields" />
+      <output name="GetFields_Result" message="tns:GetFields_Result" />
+    </operation>
+    <operation name="GetFunctions">
+      <input name="GetFunctions" message="tns:GetFunctions" />
+      <output name="GetFunctions_Result" message="tns:GetFunctions_Result" />
+    </operation>
+    <operation name="Create">
+      <input name="Create" message="tns:Create" />
+      <output name="Create_Result" message="tns:Create_Result" />
+    </operation>
+  </portType>
+  <binding name="DataToBc_Binding" type="tns:DataToBc_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="GetFields">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/DataToBc:GetFields" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetFields">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetFields_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetFunctions">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/DataToBc:GetFunctions" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetFunctions">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetFunctions_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Create">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/DataToBc:Create" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Create">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Create_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DataToBc">
+    <port name="DataToBc_Port" binding="tns:DataToBc_Binding">
+      <address location="https://api.businesscentral.dynamics.com/v1.0/1e8d4a09-820e-475f-8136-bcb4838783d9/sandbox/WS/CRONUS%20NL/Codeunit/DataToBc?tenant=msweua5608t61473070&amp;aid=FIN" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>
