@@ -7,6 +7,7 @@ codeunit 50100 DataToBC
 
     procedure Create(Type: Text; JsonString: Text; DirectCreate: boolean)
     begin
+        //Add types that you have added in GetFunctions
         case Type of
             'Customers':
                 CreateCustomer(JsonString, DirectCreate);
@@ -19,6 +20,7 @@ codeunit 50100 DataToBC
 
     procedure GetFunctions(): Text
     begin
+        //Add Types you wish to support will be displayed in the C# program
         EXIT('Customers,Items,Vendors');
     end;
 
@@ -27,8 +29,8 @@ codeunit 50100 DataToBC
         if Direct then begin
             case Type of
                 'Customers':
-                    if Direct then
-                        EXIT('No,Name,Name2,Address,Address2,City,PostCode');
+                    //Add fields that you wish to allow to be populated
+                    EXIT('No,Name,Name2,Address,Address2,City,PostCode');
                 'Items':
                     EXIT('No,Description,Description2');
                 'Vendors':
@@ -37,6 +39,7 @@ codeunit 50100 DataToBC
                     EXIT('Not Vaild')
             end;
         end else
+            //If not create direct
             EXIT('MyField1,MyField2,MyField3,MyField4,MyField5,MyField6,MyField7,MyField8,MyField9,MyField10,MyField11,MyField12,MyField13,MyField14,MyField15,MyFiel' +
                           'd16,MyField17,MyField18,MyField19,MyField20,MyField21,MyField22,MyField23,MyField24,MyField25,MyField26,MyField27,MyField28,MyField29,MyField30');
     end;
